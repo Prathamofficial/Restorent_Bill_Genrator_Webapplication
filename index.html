@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Restorent Bill</title>
+    <link rel="shortcut icon" href="./images/logoicon.png">
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts/navbarscript.js"></script>
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div id="preloader">
+        <img src="images/dplogo.gif" alt="loading...">
+      </div>
+
+
+    <div id="displayData"></div>
+    <header class="header">
+        <img src="images/DPLogo1.gif" alt="" class="logo" />
+
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li><a class="navbar-link" href="index.html">Home</a></li>
+                <li><a class="navbar-link" href="/html/order.html">take Order</a></li>
+                <li><a class="navbar-link" href="#">Services</a></li>
+                <li><a class="navbar-link" href="#">Profile</a></li>
+                <li><a class="navbar-link" href="#">setting</a></li>
+
+
+            </ul>
+
+        </nav>
+
+
+        <div class="mobile-navbar-btn1">
+            <div class="dark_mode" id="dark_mode">
+                <i id="moon" class="fa-sharp fa-solid fa-moon"></i>
+                <i id="sun" class="fa-sharp fa-solid fa-sun"></i>
+
+            </div>
+
+            <div class="mobile-navbar-btn">
+
+                <ion-icon name="menu-outline" class="mobile-nav-icon"></ion-icon>
+                <ion-icon name="close-outline" class="mobile-nav-icon"></ion-icon>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================================== 
+          Our Main Hero Section Start  
+    ========================================  -->
+
+    <section class="section-main">
+        <div class="heading">
+            <h1>Restorent bill maker</h1>
+        </div>
+        <div class="restorent_logo">
+            <img src="/images/restorent_logo.jpg" alt="">
+            <p>Restorent name <br>ABC nagar, Belgaum, 590010 <br> Karnataka, india</p>
+        </div>
+        <div class="main_container">
+
+
+            <div class="time_box"> 
+                <span class="txt_background">Time </span>
+                <div class="display">
+                    <div id="time"></div>
+                </div>
+
+            </div>
+            <div class="date_box"> 
+                <span class="txt_background">Date </span>
+                <div class="display">
+                    <div id="date"></div>
+                </div>
+
+            </div>
+            <div class="prifit_box">
+                
+                <span class="txt_background_today">Todays profit</span>
+                <!-- <p id="todays_cash_p">cash:</p> -->
+                <div class="cost">No data available</div>
+                
+
+
+                
+
+
+            </div>
+            <div class="month_profit">
+                <span class="txt_background_month">month profit</span>
+                <!-- <p id="month_cash_p">cash:</p> -->
+                <div class="costmonth">No data available</div>
+            
+
+
+
+            </div>
+            <div class="take_order_box" onclick="redirectToOrderPage()">
+                <span class="txt_background_order">Take Order</span>
+                <img src="/images/restorent_logo.jpg" alt="" srcset="">
+
+            </div>
+        </div>
+        <span id="extra"></span>
+    </section>
+
+
+
+    <!-- ======================================== 
+          Our JavaScript Section Start  
+    ========================================  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="index.js"></script>
+    <script src="/scripts/time.js"></script>
+    <script src="/scripts/date.js"></script>
+    <script src="/scripts/darkmode.js"></script>
+    <!-- <script src="/scripts/Bill_Genrate.js"></script> -->
+
+
+
+
+
+
+
+
+    <script>
+        function redirectToOrderPage() {
+
+            window.location.href = './html/order.html';
+        }
+    </script>
+    <script>
+        // Retrieving finalCalculatedCost from local storage
+const finalCalculatedCost = localStorage.getItem('finalcalculatedcost');
+
+// Select the element with the class name 'cost' in other.html
+const costElement = document.querySelector('.cost');
+
+// Set the innerHTML of the selected element to the value of finalCalculatedCost
+if (finalCalculatedCost) {
+    costElement.innerHTML = "Todays TotalCost:"+finalCalculatedCost+"₹";
+} else {
+    costElement.innerHTML = 'No data available';
+}
+
+    </script>
+
+
+
+
+    <script>
+        // Retrieving finalCalculatedCost from local storage
+const finalCalculatedCostformonth = localStorage.getItem('finalcalculatedcost');
+
+// Select the element with the class name 'cost' in other.html
+const costElementmonth = document.querySelector('.costmonth');
+
+// Set the innerHTML of the selected element to the value of finalCalculatedCost
+if (finalCalculatedCostformonth) {
+    costElementmonth.innerHTML = "month TotalCost:"+finalCalculatedCostformonth+"₹";
+} else {
+    costElement.innerHTML = 'No data available';
+}
+
+    </script>
+
+<script>
+    var darkmode = document.getElementById("dark_mode");
+
+    dark_mode.onclick = function () {
+      document.body.classList.toggle("dark_theam");
+    }
+  </script>
+
+<script src="/scripts/preloder.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

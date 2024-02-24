@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:#0a1a32;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation-delay: 3s;
+}
+
+#preloader img {
+  width: 900px; /* Adjust the size as needed */
+  height: 500px;
+} 
+
+html {
+  /* font-size: 62.5%; */
+  /* 1rem = 10px */
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--darkmode_body_colour);
+  
+ 
+}
+
+
+:root{
+  --lightmode_body_colour:white;
+  --lightmode_text_colour:black;
+  --lightmode_nav_colour:#e7f5ff;
+  --lightmode_cross_colour:#e7f5ff;
+
+
+}
+
+.dark_theam{
+  --darkmode_body_colour:#0a192f;
+  --darkmode_text_colour:white;
+  --lightmode_cross_colour:#0a192f;
+
+
+}
+p{
+  color: var(--darkmode_text_colour);
+}
+
+.header {
+  padding: 0 1.7rem;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--darkmode_body_colour);
+}
+
+.header .logo {
+  height: 80px;
+  width: 80px;
+}
+
+.navbar-list {
+  display: flex;
+  gap: 4.8rem;
+  list-style: none;
+}
+
+.navbar-link:link,
+.navbar-link:visited {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--darkmode_text_colour);
+  transition: all 0.3s;
+}
+
+.navbar-link:hover,
+.navbar-link:active {
+  color: red;
+}
+.mobile-navbar-btn {
+    display: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .mobile-nav-icon {
+    width: 3rem;
+    height: 3rem;
+    color: var(--darkmode_text_colour);
+  }
+  
+  .mobile-nav-icon[name="close-outline"] {
+    display: none;
+  }
+  
+  /* ===========================================
+  Hero and Service Section Start
+  ======================================= */
+  .section_main{
+    width: 100%;
+    height: 100%;
+  }
+  .main_container {
+    width: 100%;
+   height: 100%;
+   margin-top: 9rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+    gap: 20px;
+    font-family: 'Times New Roman', Times, serif;
+   
+}
+
+/* ===========================================
+Responsive Codes 
+======================================= */
+
+/* 980px  */
+@media (max-width: 62em) {
+  .mobile-navbar-btn1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  #preloader img {
+    width: 700px; /* Adjust the size as needed */
+    height: 400px;
+  }
+  .mobile-navbar-btn {
+    display: block;
+    z-index: 999;
+    border: 1px solid var(--darkmode_text_colour);
+    color: #212529;
+  }
+
+  .header {
+    position: relative;
+    background-color: var(--darkmode_body_colour);
+  }
+  .header .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .navbar {
+    /* display: none; */
+    width: 100%;
+    height: 100vh;
+    background: var(--lightmode_cross_colour);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* to get the tranisition  */
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .navbar-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .active .navbar {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
+    display: block;
+  }
+
+  .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
+    display: none;
+  }
+  
+
+  
+}
+
+/* Below 560px  */
+@media (max-width: 35em) {
+  .header {
+    padding: 0 1.4rem;
+    /* background-color: var(--darkmode_body_colour); */
+  }
+  #preloader img {
+    width: 700px; /* Adjust the size as needed */
+    height: 300px;
+  }
+
+  .header .logo {
+    width: 60px;
+    height: 60px;
+  }
+}
