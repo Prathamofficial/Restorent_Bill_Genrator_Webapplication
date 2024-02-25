@@ -160,6 +160,7 @@ header{
     /* border: 1px solid transparent; */
     border: none;
     text-align: center;
+    cursor: pointer;
 
 }
 .reset_btn{
@@ -172,6 +173,7 @@ header{
     /* border: 1px solid transparent; */
     border: none;
     text-align: center;
+    cursor: pointer;
 
 }
 .btn_box{
